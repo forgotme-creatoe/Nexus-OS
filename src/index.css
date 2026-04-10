@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+.nos {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background: #000;
+}
+
+.wallpaper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(ellipse 40% 60% at 75% 55%, rgba(160,0,0,0.35) 0%, transparent 55%),
+              radial-gradient(ellipse 30% 40% at 85% 80%, rgba(120,0,0,0.25) 0%, transparent 50%),
+              radial-gradient(ellipse 50% 30% at 20% 70%, rgba(80,0,0,0.2) 0%, transparent 60%),
+              linear-gradient(135deg, #000 0%, #0a0000 40%, #050000 70%, #000 100%);
+  background-size: cover;
+  background-position: center;
+}
+
+.slash {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.slash::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 16px;
+  background: rgba(180,0,0,0.65);
+  top: 28%;
+  left: -10%;
+  transform: rotate(-28deg);
+}
+.slash::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 7px;
+  background: rgba(220,0,0,0.35);
+  top: 32%;
+  left: -10%;
+  transform: rotate(-28deg);
+}
+
+.lock-red {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 70% 50%, rgba(140,0,0,0.3) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Custom Scrollbar for OS */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
